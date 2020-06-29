@@ -1,1 +1,22 @@
-<p>search works!</p>
+<div class="row">
+  <div class="col">
+    <input type="text" (keyup)="search(termino.value)" class="form-control" placeholder="search" #termino>
+  </div>
+</div>
+
+<div class="container">
+  <div class="card-columns">
+    <div *ngFor="let artist of artists" class="card" style="width: 18rem;">
+        <img [src]="artist.images[0].url" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{artist.name}}</h5>
+          <!-- <p class="card-text">
+            <span *ngFor="let singers of song.artists" class="badge badge-info">{{singers.name}}</span>
+          </p> -->
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+

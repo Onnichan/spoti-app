@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn:'root'
@@ -7,14 +7,19 @@ import { HttpClient } from '@angular/common/http';
 
 export class SpotifyService{
 
-  URL:string;
+
   constructor(private httpClient:HttpClient){
-    this.URL = ''
+    console.log('Spotify ready');
   }
 
   getNewReleases(){
-    this.httpClient.get('');
+    
+    let headers = new HttpHeaders({'Authorization':'Bearer BQCGtILltkwds-Q6OUCeCHii4GoR-pSIBFS8oF_xGP5IqZhNA-LjZ9EOJAZkEJVnCJpqsIgHmDa5Av4LnX0'});
+    return this.httpClient.get('https://api.spotify.com/v1/browse/new-releases',{headers});
   }
 
-
+  getArtist(ter:string){
+    let headers = new HttpHeaders({'Authorization':'Bearer BQCGtILltkwds-Q6OUCeCHii4GoR-pSIBFS8oF_xGP5IqZhNA-LjZ9EOJAZkEJVnCJpqsIgHmDa5Av4LnX0'});
+    return this.httpClient.get(`https://api.spotify.com/v1/search?q=%20${ter}&type=artist`,{headers});
+  }
 }
