@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { SearchComponent } from './components/search/search.component';
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SearchComponent } from './components/search/search.component';
     HomeComponent,
     ArtistComponent,
     NavbarComponent,
-    SearchComponent
+    SearchComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,
