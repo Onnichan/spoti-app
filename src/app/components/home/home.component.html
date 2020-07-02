@@ -1,6 +1,6 @@
-<div class="card-columns">
+<!-- <div class="card-columns">
 <div *ngFor="let song of newSongs" class="card" style="width: 18rem;">
-    <img [src]="song.images[0].url" class="card-img-top" alt="...">
+    <img [src]="song.images | noimage" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{song.name}}</h5>
       <p class="card-text">
@@ -9,4 +9,6 @@
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
-</div>
+</div> -->
+
+<app-tarjetas [items]="newSongs"></app-tarjetas>

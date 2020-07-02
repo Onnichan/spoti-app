@@ -1,0 +1,12 @@
+<div class="card-columns">
+  <div *ngFor="let item of items" class="card" style="width: 18rem;">
+      <img [src]="item.images | noimage" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{item.name}}</h5>
+        <p class="card-text">
+          <span *ngFor="let singers of item.artists" class="badge badge-info">{{singers.name}}</span>
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
