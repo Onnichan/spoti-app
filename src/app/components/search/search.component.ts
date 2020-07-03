@@ -17,7 +17,7 @@ export class SearchComponent {
     this.spotifyService.getArtist(value).subscribe((response:any)=>{
       console.log(response);
       this.artists = response;
+      this.loading = false;
     });
-    this.loading = false;
   }
 }
